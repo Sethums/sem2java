@@ -43,9 +43,9 @@ class mul_table implements Runnable
 	mul_table(int n)	
         {
           this.n=n;
-          a=new Thread(this,"Mul");
+          a=new Thread(this,"Even");
 	  a.setPriority(10);
-   System.out.println("The Priority of mul_table is "+a.getPriority());
+   System.out.println("The Priority of even numbers is "+a.getPriority());
 
           a.start();
         } 
@@ -53,9 +53,10 @@ class mul_table implements Runnable
         {    String tName = Thread.currentThread().getName();
 		System.out.println("The Name of the Thread is "+tName);
               try {
-               		System.out.println("          Multiplication table of  "+n);
-			for(int i=1;i<=10;i++)
-                         { System.out.println("      "+ i +"*"+n+"="+i*n);
+               		System.out.println("         Even numbers upto 10 ");
+			for(int i=1;i<=10;i++){
+if(i%2==0)
+                         { System.out.println(i);}
 				a.sleep(10);
 			}
 		}catch(InterruptedException q){}
